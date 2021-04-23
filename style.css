@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#main_window {
+    width: 100%;
+    height: 100%;
+    background: url("./images/slaid2pizza.jpg") center / cover no-repeat;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#order_list,
+#pizza_image_load {
+    flex-basis: 50%;
+    height: 500px;
+}
+
+#order_list {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#pizza_image_load {
+    background: url("./images/mexico.png") center / 50% auto no-repeat;
+}
+
+#ingredients_list {
+    flex-basis: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
