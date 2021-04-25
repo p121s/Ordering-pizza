@@ -1,9 +1,8 @@
 class PartPizza {
-    constructor(title, price, part) {
+    constructor(title, price) {
         this.title = title;
         this.price = price;
-        this.part = part;
     }
 }
 
-export {BaPartPizzase};
+export {PartPizza};

@@ -5,6 +5,7 @@ function createListPartOfThePizza(arrayParts) {
     arrayParts.forEach(item => {
         const li = document.createElement('li');
         const checkbox = document.createElement('input');
+        checkbox.classList.add('checkboxClass');
         checkbox.type = 'checkbox';
         checkbox.id = translit(item.title);
         const label = document.createElement('label');
