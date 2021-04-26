@@ -3,6 +3,7 @@ import {createListPartOfThePizza} from "./createListPartOfThePizza.js";
 import {disablesLi} from "./disabledLi.js";
 import {whatToChangePlus, whatToChangeMinus} from "./whatToChange.js";
 import {counter} from "./counterCheckedItem.js";
+import {priceFormation} from "./priceFormation.js";
 const base = document.getElementById('base');
 const ingredient1 = document.getElementById('ingredient1');
 const ingredient2 = document.getElementById('ingredient2');
@@ -51,6 +52,7 @@ souce.append(createListPartOfThePizza([souce1, souce2, souce3, souce4]));
             dasibleLiForChange(ingredient1, counter.ingredient1Counter, 2);
             dasibleLiForChange(ingredient2, counter.ingredient2Counter, 2);
             dasibleLiForChange(souce, counter.souceCounter, 1);
+            priceFormation(true, item.nextSibling.nextSibling.textContent);
         } else {
             [...ul.children].forEach(itemli => {
                 if(itemli.textContent === title) {
@@ -60,6 +62,7 @@ souce.append(createListPartOfThePizza([souce1, souce2, souce3, souce4]));
                     whatToChangeMinus(item);
                 }
             });
+            priceFormation(false, item.nextSibling.nextSibling.textContent);
         }
     });
 });
