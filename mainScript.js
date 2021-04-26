@@ -3,13 +3,11 @@ import {createListPartOfThePizza} from "./createListPartOfThePizza.js";
 import {disablesLi} from "./disabledLi.js";
 import {whatToChangePlus, whatToChangeMinus} from "./whatToChange.js";
 import {counter} from "./counterCheckedItem.js";
-export const base = document.getElementById('base');
-export const ingredient1 = document.getElementById('ingredient1');
-export const ingredient2 = document.getElementById('ingredient2');
-export const souce = document.getElementById('souce');
+const base = document.getElementById('base');
+const ingredient1 = document.getElementById('ingredient1');
+const ingredient2 = document.getElementById('ingredient2');
+const souce = document.getElementById('souce');
 const checkboxCollection = document.getElementsByClassName('checkboxClass');
-
-
 const orderList = document.getElementById('order_list');
 const ul = document.createElement('ul');
 orderList.append(ul);
@@ -49,6 +47,10 @@ souce.append(createListPartOfThePizza([souce1, souce2, souce3, souce4]));
             item.nextSibling.style.color = 'red';
             item.nextSibling.nextSibling.style.color = 'red';
             whatToChangePlus(item);
+            dasibleLiForChange(base, counter.baseCounter, 1);
+            dasibleLiForChange(ingredient1, counter.ingredient1Counter, 2);
+            dasibleLiForChange(ingredient2, counter.ingredient2Counter, 2);
+            dasibleLiForChange(souce, counter.souceCounter, 1);
         } else {
             [...ul.children].forEach(itemli => {
                 if(itemli.textContent === title) {
@@ -62,20 +64,10 @@ souce.append(createListPartOfThePizza([souce1, souce2, souce3, souce4]));
     });
 });
 
-[...base.children[1].children].forEach(item => {
-    item.addEventListener('change', function() {
-        disablesLi(base, counter.baseCounter);
+function dasibleLiForChange (block, counter, quantity) {
+    [...block.children[1].children].forEach(item => {
+        item.addEventListener('change', function() {
+            disablesLi(block, counter, quantity);
+        });
     });
-});
-
-// [...ingredient1.children[1].children].forEach(item => {
-//     item.addEventListener('click', disablesLiIngredient1);
-// });
-
-// [...ingredient2.children[1].children].forEach(item => {
-//     item.addEventListener('click', disablesLi);
-// });
-
-// [...souce.children[1].children].forEach(item => {
-//     item.addEventListener('click', disablesLi);
-// });
+}
