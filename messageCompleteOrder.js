@@ -1,7 +1,7 @@
 export function messageCompleteOdrder() {
     const divMessage = document.createElement('div');
     const parMessage = document.createElement('p');
-    parMessage.textContent = 'Ваш заказ успешно завешен';
+    parMessage.textContent = 'Ваш заказ успешно завершен';
     divMessage.style.cssText = `
     position: absolute;
     top: 50%;
